@@ -23,26 +23,26 @@ class BadgeableTagsColumn extends Column
 
     protected string $view = 'filament-badgeable-column::components.badgeable-tags-column';
 
-    protected array | Closure $colors = [];
+    protected array|Closure $colors = [];
 
-    protected bool | Closure $canWrap = false;
+    protected bool|Closure $canWrap = false;
 
-    protected array | Closure | null $badges;
+    protected array|Closure|null $badges;
 
-    protected bool | Closure | null $asPills = true;
+    protected bool|Closure|null $asPills = true;
 
-    protected int | null $wrapEvery = null;
+    protected int|null $wrapEvery = null;
 
     protected Column $column;
 
-    public function colors(array | Closure $colors): static
+    public function colors(array|Closure $colors): static
     {
         $this->colors = $colors;
 
         return $this;
     }
 
-    public function badges(array | Closure | null $badges): static
+    public function badges(array|Closure|null $badges): static
     {
         $this->badges = $badges;
 
@@ -83,20 +83,19 @@ class BadgeableTagsColumn extends Column
         return $this;
     }
 
-    public function wrap(bool | Closure $condition = true): static
+    public function wrap(bool|Closure $condition = true): static
     {
         $this->canWrap = $condition;
 
         return $this;
     }
 
-    public function asPills(bool | Closure | null $condition): static
+    public function asPills(bool|Closure|null $condition): static
     {
         $this->asPills = $condition;
 
         return $this;
     }
-
 
     public function canWrap(): bool
     {
